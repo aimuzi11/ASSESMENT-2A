@@ -410,6 +410,9 @@ const Dashboard = ({
                       Category
                     </th>
                     <th className="py-4 px-4 text-left text-sm font-medium text-dark-900/50">
+                      Description
+                    </th>
+                    <th className="py-4 px-4 text-left text-sm font-medium text-dark-900/50">
                       Urgency
                     </th>
                     <th className="py-4 px-4 text-left text-sm font-medium text-dark-900/50">

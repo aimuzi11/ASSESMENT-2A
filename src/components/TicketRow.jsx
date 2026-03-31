@@ -107,7 +107,7 @@ const TicketRow = React.forwardRef(({ ticket, onStatusChange, index }, ref) => {
       </td>
 
       {/* Status */}
-      <td className="py-4 px-4">
+      <td className="py-4 px-4 relative" style={{ overflow: 'visible' }}>
         <StatusDropdown
           value={ticket.status}
           onChange={handleStatusChange}
