@@ -1,0 +1,48 @@
+{
+  "name": "property-maintenance-tracker",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "vite",
+    "dev:server": "cd server && node index.js",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "init-db": "cd server && node init-db.js",
+    "server": "cd server && node index.js",
+    "start": "node server/index.js",
+    "build:production": "npm install && vite build"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.3.0",
+    "clsx": "^2.1.0",
+    "cors": "^2.8.6",
+    "date-fns": "^3.6.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.400.0",
+    "pg": "^8.20.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "autoprefixer": "^10.4.18",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.0.0",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "globals": "^17.4.0",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.4.0"
+  }
+}

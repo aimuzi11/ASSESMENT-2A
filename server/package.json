@@ -1,0 +1,17 @@
+{
+  "name": "property-maintenance-server",
+  "version": "1.0.0",
+  "description": "Backend server for Property Maintenance Tracker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "init-db": "node init-db.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "pg": "^8.20.0"
+  }
+}
