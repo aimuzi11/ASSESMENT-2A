@@ -1,156 +1,88 @@
 # Property Maintenance Tracker
 
-A beautiful, production-grade property maintenance tracking application built with React 18, Tailwind CSS, Framer Motion, and MUI Base UI.
+A modern, full-stack property maintenance tracking system built with React, Express, and PostgreSQL.
+
+![Property Maintenance Tracker](https://img.shields.io/badge/Status-Production%20Ready-success)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
 ## Features
 
-- **Modern Light Theme** with white background and deep blue accents
-- **MUI Base UI Integration** for accessible, unstyled components
-- **Glass Morphism Design** with frosted glass effects and subtle shadows
-- **Responsive Layout** works perfectly on desktop, tablet, and mobile
-- **Smooth Animations** powered by Framer Motion
-- **LocalStorage Persistence** - your data is saved automatically
-- **Form Validation** with inline error messages
-- **Status Management** with dropdown controls
-- **Filter & Search** by property, urgency, and status
-
-## Color Scheme
-
-**Deep Blue Theme:**
-- Primary: #1E40AF (Blue-800) - Deep professional blue
-- Secondary: #2563EB (Blue-600) - Medium blue for accents
-- Light: #3B82F6 (Blue-500) - Bright blue for highlights
-- Background: #F8F9FA - Clean white/light gray
-- Text: #1A1A24 - Dark gray for excellent readability
+- **Submit Maintenance Issues**: Report maintenance problems with photos, categories, and urgency levels
+- **Track Status**: Monitor issue status (Open, In Progress, Resolved)
+- **Property Management**: Add and manage multiple properties dynamically
+- **Filter & Search**: Filter issues by property, urgency, and status
+- **Beautiful UI**: Modern glassmorphic design with smooth animations
+- **Responsive**: Works seamlessly on desktop, tablet, and mobile
 
 ## Tech Stack
 
-- **React 18** - Modern functional components with hooks
-- **Vite** - Lightning-fast build tool
-- **Tailwind CSS** - Utility-first CSS framework
-- **MUI Base UI** - Accessible headless components
-- **Framer Motion** - Production-ready motion library
-- **Lucide React** - Beautiful icon system
-- **date-fns** - Modern JavaScript date utility
+### Frontend
+- React 18
+- Vite (Build tool)
+- Tailwind CSS
+- Framer Motion (Animations)
+- Lucide React (Icons)
 
-## Getting Started
+### Backend
+- Node.js + Express
+- PostgreSQL (Neon DB)
+- RESTful API
 
-### Installation
+## Quick Start
 
-```bash
-npm install
-```
+### Prerequisites
+- Node.js 18+
+- PostgreSQL database (or Neon.tech account)
 
-### Development
+### Local Development
 
-```bash
-npm run dev
-```
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd property-maintenance-tracker
+   ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-### Build for Production
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   ```
+   Edit `.env` and add your database URL
 
-```bash
-npm run build
-```
+4. **Initialize the database**
+   ```bash
+   npm run init-db
+   ```
 
-### Preview Production Build
+5. **Start development servers**
+   ```bash
+   npm run dev
+   ```
 
-```bash
-npm run preview
-```
+## Deployment
 
-## Project Structure
+### Deploy to Render (Recommended)
 
-```
-src/
-├── components/
-│   ├── GlassIcons.jsx       # Custom SVG icons with glass effects
-│   ├── UrgencyPill.jsx      # Urgency badges and selector
-│   ├── StatusDropdown.jsx   # Custom status dropdown
-│   ├── SubmitForm.jsx       # Issue submission form
-│   ├── TicketRow.jsx        # Table rows and mobile cards
-│   ├── Dashboard.jsx        # Main dashboard view
-│   ├── MuiButton.jsx        # MUI Base Button wrapper
-│   └── MuiSelect.jsx        # MUI Base Select wrapper
-├── App.jsx                  # Main app component
-├── main.jsx                 # Entry point
-└── index.css                # Global styles
+See [RENDER_DEPLOY_STEPS.md](./RENDER_DEPLOY_STEPS.md) for quick 5-step deployment guide.
 
-## Features Breakdown
+**Quick Deploy:**
+1. Push to GitHub
+2. Go to Render.com
+3. New → Blueprint → Connect repo
+4. Click "Apply"
+5. Run `npm run init-db` in Shell
 
-### Submit Issue View
-- Property dropdown with 5 pre-populated properties
-- Category selection with custom glass icons
-- 3-level urgency selector (Low, Medium, High)
-- Rich text description with character counter
-- Photo upload with preview
-- Full form validation
-- Success modal with animated checkmark
+## Available Scripts
 
-### Dashboard View
-- 4 metric cards (Total, Open, In Progress, Resolved)
-- Multi-filter system (Property, Urgency, Status)
-- Responsive table/card layout
-- Inline status editing
-- Empty state with call-to-action
-- Smooth animations and transitions
+- `npm run dev` - Start development (frontend + backend)
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run init-db` - Initialize database tables
 
-### Design System
-- **Glass Cards**: Semi-transparent with blur and subtle shadows
-- **Deep Blue Buttons**: Solid deep blue (#1E40AF) with hover effects
-- **Urgency Pills**: Color-coded with glow effects
-- **Status Badges**: Interactive dropdowns with smooth animations
-- **Custom Icons**: Hand-crafted SVG icons for each category
+## Support
 
-## Key Components
-
-### MUI Base UI Integration
-
-The app uses MUI Base UI for accessible, unstyled components:
-
-- **Button** - Fully accessible button with keyboard navigation
-- **Select** - Custom dropdown with ARIA support
-
-### Accessibility
-
-- Proper ARIA labels on all interactive elements
-- Keyboard navigation support
-- Focus indicators on all focusable elements
-- Color is not the only signal (text labels included)
-- Screen reader friendly
-
-### Performance
-
-- Code splitting with dynamic imports
-- Optimized bundle size
-- Lazy loading for images
-- Smooth 60fps animations
-- LocalStorage caching
-
-## Data Model
-
-Each maintenance ticket includes:
-- Unique ticket ID (MNT-0001, MNT-0002, etc.)
-- Property name
-- Issue category
-- Urgency level
-- Description
-- Optional photo
-- Submission date
-- Current status
-
-## Browser Support
-
-- Chrome/Edge (latest 2 versions)
-- Firefox (latest 2 versions)
-- Safari (latest 2 versions)
-
-## License
-
-MIT
-
-## Credits
-
-Built with React + Tailwind CSS + MUI Base UI
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for comprehensive deployment documentation.

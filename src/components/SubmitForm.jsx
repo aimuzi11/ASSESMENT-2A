@@ -131,7 +131,7 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
       >
         {/* Form Card */}
         <div
-          className="rounded-2xl p-8 relative overflow-hidden"
+          className="rounded-2xl p-8 relative overflow-visible"
           style={{
             background: 'rgba(255, 255, 255, 0.8)',
             border: '1px solid rgba(0, 0, 0, 0.08)',

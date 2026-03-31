@@ -416,6 +416,9 @@ const Dashboard = ({
                       Date
                     </th>
                     <th className="py-4 px-4 text-left text-sm font-medium text-dark-900/50">
+                      Photo
+                    </th>
+                    <th className="py-4 px-4 text-left text-sm font-medium text-dark-900/50">
                       Status
                     </th>
                     <th className="w-1"></th>

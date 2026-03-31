@@ -1,0 +1,23 @@
+services:
+  # Database
+  - type: pserv
+    name: property-maintenance-db
+    env: docker
+    plan: free
+    ipAllowList: []
+
+  # Web Service
+  - type: web
+    name: property-maintenance-tracker
+    env: node
+    plan: free
+    buildCommand: npm run build:production
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: property-maintenance-db
+          property: connectionString
+    healthCheckPath: /api/health
