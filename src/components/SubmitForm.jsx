@@ -68,13 +68,22 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
 
     setIsSubmitting(true);
 
-    // Simulate a brief submission delay
-    await new Promise((resolve) => setTimeout(resolve, 600));
+    try {
+      // Simulate a brief submission delay
+      await new Promise((resolve) => setTimeout(resolve, 600));
 
-    const ticketId = onSubmit(formData);
-    setNewTicketId(ticketId);
-    setShowSuccess(true);
-    setIsSubmitting(false);
+      const ticketId = await onSubmit(formData);
+      setNewTicketId(ticketId);
+      setShowSuccess(true);
+    } catch (error) {
+      console.error('Failed to submit ticket:', error);
+      setErrors((prev) => ({
+        ...prev,
+        submit: 'Failed to submit ticket. Please try again.'
+      }));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handlePhotoUpload = (e) => {
@@ -157,6 +166,17 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
                 Report a maintenance issue for your property
               </p>
             </div>
+
+            {/* Submission Error */}
+            {errors.submit && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-4 p-4 rounded-xl bg-red-500/10 border border-red-500/20"
+              >
+                <p className="text-red-600 text-sm font-medium">{errors.submit}</p>
+              </motion.div>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Property Dropdown */}
@@ -479,33 +499,17 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
                 Your maintenance request has been logged successfully
               </p>
 
-              <div className="flex gap-3">
-                <motion.button
-                  onClick={handleSuccessClose}
-                  className="flex-1 py-3 px-4 rounded-xl font-medium text-dark-900/70 hover:text-dark-900 hover:bg-black/5 transition-colors"
-                  style={{
-                    border: '1px solid rgba(0, 0, 0, 0.1)',
-                  }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Submit Another
-                </motion.button>
-                <motion.button
-                  onClick={() => {
-                    handleSuccessClose();
-                    onSuccess?.();
-                  }}
-                  className="flex-1 py-3 px-4 rounded-xl font-semibold text-white"
-                  style={{
-                    background: '#1E40AF',
-                  }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  View Dashboard
-                </motion.button>
-              </div>
+              <motion.button
+                onClick={handleSuccessClose}
+                className="w-full py-3 px-4 rounded-xl font-semibold text-white"
+                style={{
+                  background: '#1E40AF',
+                }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Submit Another
+              </motion.button>
             </motion.div>
           </motion.div>
         )}

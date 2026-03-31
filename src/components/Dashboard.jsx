@@ -396,8 +396,8 @@ const Dashboard = ({
         ) : (
           <>
             {/* Desktop Table */}
-            <div className="hidden md:block overflow-x-auto rounded-xl">
-              <table className="w-full">
+            <div className="hidden md:block rounded-xl" style={{ overflow: 'visible' }}>
+              <table className="w-full" style={{ overflow: 'visible' }}>
                 <thead>
                   <tr className="border-b border-black/10">
                     <th className="py-4 px-4 text-left text-sm font-medium text-dark-900/50">
@@ -424,7 +424,7 @@ const Dashboard = ({
                     <th className="w-1"></th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody style={{ overflow: 'visible' }}>
                   <AnimatePresence mode="popLayout">
                     {filteredTickets.map((ticket, index) => (
                       <TicketRow

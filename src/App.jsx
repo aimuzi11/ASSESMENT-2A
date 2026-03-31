@@ -92,9 +92,11 @@ function App() {
     try {
       await api.deleteProperty(id);
       setProperties((prev) => prev.filter((p) => p.id !== id));
+      // Also reload tickets in case any were deleted with the property
+      await loadTickets();
     } catch (err) {
       console.error('Failed to delete property:', err);
-      throw new Error('Failed to delete property');
+      throw new Error(err.message || 'Failed to delete property. It may have associated tickets.');
     }
   };
 

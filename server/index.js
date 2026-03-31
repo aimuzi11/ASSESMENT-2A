@@ -62,6 +62,14 @@ app.delete('/api/properties/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
+    // Check if property has associated tickets
+    const ticketsCheck = await pool.query(
+      'SELECT COUNT(*) FROM tickets WHERE property_id = $1',
+      [id]
+    );
+
+    const ticketCount = parseInt(ticketsCheck.rows[0].count);
+
     const result = await pool.query(
       'DELETE FROM properties WHERE id = $1 RETURNING name',
       [id]
@@ -71,9 +79,18 @@ app.delete('/api/properties/:id', async (req, res) => {
       return res.status(404).json({ error: 'Property not found' });
     }
 
-    res.json({ message: 'Property deleted successfully', name: result.rows[0].name });
+    res.json({
+      message: 'Property deleted successfully',
+      name: result.rows[0].name,
+      ticketsDeleted: ticketCount
+    });
   } catch (error) {
     console.error('Error deleting property:', error);
+    if (error.code === '23503') {
+      return res.status(400).json({
+        error: 'Cannot delete property with existing tickets. Please delete or reassign tickets first.'
+      });
+    }
     res.status(500).json({ error: 'Failed to delete property' });
   }
 });
