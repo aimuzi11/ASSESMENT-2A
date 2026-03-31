@@ -79,6 +79,16 @@ const TicketRow = React.forwardRef(({ ticket, onStatusChange, index }, ref) => {
         </div>
       </td>
 
+      {/* Description */}
+      <td className="py-4 px-4">
+        <div
+          className={`max-w-[200px] truncate text-sm tooltip ${isResolved ? 'row-resolved' : ''}`}
+          data-tooltip={ticket.description}
+        >
+          {ticket.description}
+        </div>
+      </td>
+
       {/* Urgency */}
       <td className="py-4 px-4">
         <UrgencyPill urgency={ticket.urgency} size="sm" showIcon />
@@ -234,6 +244,11 @@ export const TicketCard = React.forwardRef(({ ticket, onStatusChange, index }, r
           {ticket.category}
         </span>
       </div>
+
+      {/* Description */}
+      <p className={`text-sm text-dark-900/70 mb-3 line-clamp-2 ${isResolved ? 'row-resolved' : ''}`}>
+        {ticket.description}
+      </p>
 
       {/* Photo Preview */}
       {ticket.photoUrl && (
