@@ -50,7 +50,7 @@ Property Maintenance Tracker is a comprehensive full-stack application designed 
 
 ## Features
 
-### 🎫 Issue Management
+###  Issue Management
 
 - **Submit Issues** - Create maintenance tickets with detailed information
   - Property selection from dynamic list
@@ -70,13 +70,13 @@ Property Maintenance Tracker is a comprehensive full-stack application designed 
   - Mobile-optimized card view
   - Real-time updates with animations
 
-### 🏢 Property Management
+###  Property Management
 
 - **Add Properties** - Dynamically add new properties
 - **Delete Properties** - Remove properties (with cascade handling)
 - **Filter by Property** - View issues for specific properties
 
-### 🎨 User Interface
+### User Interface
 
 - **Glassmorphic Design** - Modern, frosted-glass aesthetic
 - **Smooth Animations** - Framer Motion powered transitions
@@ -85,7 +85,7 @@ Property Maintenance Tracker is a comprehensive full-stack application designed 
 - **Status Indicators** - Color-coded urgency and status pills
 - **Form Validation** - Real-time validation with helpful error messages
 
-### 📱 Responsive Features
+###  Responsive Features
 
 - **Desktop Table View** - Full-featured data table with inline actions
 - **Mobile Card View** - Touch-optimized card layout
@@ -952,24 +952,24 @@ Design inspired by modern glassmorphic UI trends and property management workflo
 
 **Initial Release**
 
-- ✨ Full-stack property maintenance tracking system
-- 🎨 Beautiful glassmorphic UI design
-- 📱 Responsive mobile and desktop layouts
-- 🗄️ PostgreSQL database integration
-- 🔄 Real-time status updates
-- 📸 Photo upload support
-- 🏢 Multi-property management
-- 🔍 Advanced filtering and search
-- 🎭 Smooth animations with Framer Motion
-- 🚀 Production-ready deployment
+- Full-stack property maintenance tracking system
+- Beautiful glassmorphic UI design
+- Responsive mobile and desktop layouts
+-  PostgreSQL database integration
+- Real-time status updates
+-  Photo upload support
+   Multi-property management
+-  Advanced filtering and search
+-  Smooth animations with Framer Motion
+-  Production-ready deployment
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by the Property Maintenance Tracker Team**
 
-⭐ Star this repo if you find it helpful!
+
+ Star this repo if you find it helpful!
 
 [Report Bug](https://github.com/yourusername/property-maintenance-tracker/issues) • [Request Feature](https://github.com/yourusername/property-maintenance-tracker/issues)
 
