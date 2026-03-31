@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, LayoutDashboard, Wrench } from 'lucide-react';
+import { Plus, LayoutDashboard } from 'lucide-react';
 import SubmitForm from './components/SubmitForm';
 import Dashboard from './components/Dashboard';
 import { api } from './services/api';
@@ -140,21 +140,14 @@ function App() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(30,64,175,0.12) 0%, rgba(37,99,235,0.12) 100%)',
-                  border: '1px solid rgba(30,64,175,0.3)',
-                }}
-              >
-                <Wrench size={20} className="text-blue-800" />
-              </div>
-              <div>
-                <h1 className="font-sora font-semibold text-dark-900 text-lg">
-                  PropertyMaint
-                </h1>
-                <p className="text-xs text-dark-900/40 -mt-0.5 hidden sm:block">
-                  Maintenance Tracker
+              <img
+                src="https://i.postimg.cc/mkgbHLbX/Deluxe-Holiday-Homes-New-Logo612x300.png"
+                alt="Deluxe Holiday Homes"
+                className="h-12 w-auto object-contain"
+              />
+              <div className="hidden sm:block">
+                <p className="text-sm text-dark-900/70 font-medium">
+                  Maintenance Portal
                 </p>
               </div>
             </div>
@@ -273,7 +266,7 @@ function App() {
       {/* Footer */}
       <footer className="mt-auto py-4 sm:py-6 text-center">
         <p className="text-dark-900/30 text-xs sm:text-sm">
-          Property Maintenance Tracker • Built with React + Neon DB
+          Deluxe Holiday Homes • Maintenance Portal
         </p>
       </footer>
     </div>
