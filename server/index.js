@@ -281,7 +281,7 @@ app.get('/api/stats', async (req, res) => {
 
 // Serve frontend app in production (must be after API routes)
 if (isProduction) {
-  app.get('*', (req, res) => {
+  app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
   });
 }
