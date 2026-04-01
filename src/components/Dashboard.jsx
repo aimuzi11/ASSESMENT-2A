@@ -14,7 +14,7 @@ const StatCard = ({ label, value, accentColor, delay }) => (
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay, duration: 0.4 }}
-    className="relative overflow-hidden rounded-xl p-5"
+    className="relative overflow-hidden rounded-xl p-4 sm:p-5"
     style={{
       background: 'rgba(255, 255, 255, 0.8)',
       border: '1px solid rgba(0, 0, 0, 0.08)',
@@ -27,11 +27,11 @@ const StatCard = ({ label, value, accentColor, delay }) => (
       style={{ backgroundColor: accentColor }}
     />
 
-    <div className="pl-3">
-      <div className="font-sora text-3xl font-semibold text-dark-900 mb-1">
+    <div className="pl-2 sm:pl-3">
+      <div className="font-sora text-2xl sm:text-3xl font-semibold text-dark-900 mb-1">
         {value}
       </div>
-      <div className="text-sm text-dark-900/50">
+      <div className="text-xs sm:text-sm text-dark-900/50">
         {label}
       </div>
     </div>
@@ -43,8 +43,8 @@ const FilterPill = ({ label, isActive, onClick, color }) => (
   <motion.button
     onClick={onClick}
     className={`
-      px-4 py-2 rounded-lg text-sm font-medium
-      transition-all duration-200
+      px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium
+      transition-all duration-200 whitespace-nowrap
     `}
     style={{
       backgroundColor: isActive ? `${color}25` : 'rgba(0, 0, 0, 0.04)',

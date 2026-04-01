@@ -451,7 +451,7 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-              className="w-full max-w-md p-8 rounded-2xl text-center"
+              className="w-full max-w-md p-6 sm:p-8 rounded-2xl text-center mx-4"
               style={{
                 background: 'rgba(255, 255, 255, 0.85)',
                 border: '1px solid rgba(0, 0, 0, 0.1)',
@@ -461,14 +461,14 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Animated Checkmark */}
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center"
+              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-full flex items-center justify-center"
                 style={{
                   background: 'rgba(34, 197, 94, 0.15)',
                   border: '1px solid rgba(34, 197, 94, 0.3)',
                 }}
               >
                 <svg
-                  className="w-10 h-10"
+                  className="w-8 h-8 sm:w-10 sm:h-10"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="#22C55E"
@@ -482,7 +482,7 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
 
               {/* Ticket Number */}
               <div
-                className="inline-block px-5 py-2 rounded-xl mb-4 font-mono text-2xl font-bold"
+                className="inline-block px-4 sm:px-5 py-1.5 sm:py-2 rounded-xl mb-3 sm:mb-4 font-mono text-lg sm:text-2xl font-bold"
                 style={{
                   background: 'rgba(30, 64, 175, 0.15)',
                   border: '1px solid rgba(30, 64, 175, 0.25)',
@@ -492,16 +492,16 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
                 {newTicketId}
               </div>
 
-              <h3 className="font-sora text-xl font-semibold text-dark-900 mb-2">
+              <h3 className="font-sora text-lg sm:text-xl font-semibold text-dark-900 mb-2">
                 Issue Submitted
               </h3>
-              <p className="text-dark-900/50 text-sm mb-8">
+              <p className="text-dark-900/50 text-xs sm:text-sm mb-6 sm:mb-8">
                 Your maintenance request has been logged successfully
               </p>
 
               <motion.button
                 onClick={handleSuccessClose}
-                className="w-full py-3 px-4 rounded-xl font-semibold text-white"
+                className="w-full py-2.5 sm:py-3 px-4 rounded-xl font-semibold text-sm sm:text-base text-white"
                 style={{
                   background: '#1E40AF',
                 }}

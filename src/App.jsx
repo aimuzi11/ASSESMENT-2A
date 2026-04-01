@@ -143,7 +143,7 @@ function App() {
               <img
                 src="https://i.postimg.cc/mkgbHLbX/Deluxe-Holiday-Homes-New-Logo612x300.png"
                 alt="Deluxe Holiday Homes"
-                className="h-12 w-auto object-contain"
+                className="h-8 sm:h-10 md:h-12 w-auto object-contain"
               />
               <div className="hidden sm:block">
                 <p className="text-sm text-dark-900/70 font-medium">
