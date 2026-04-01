@@ -53,10 +53,12 @@ npm install --legacy-peer-deps
 Create a `.env` file in the root directory:
 
 ```env
-DATABASE_URL=postgresql://neondb_owner:npg_7QVW6hNvIbmK@ep-royal-night-a4ipu8xq-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require
+DATABASE_URL=your_neon_database_url_here
 PORT=3001
 NODE_ENV=development
 ```
+
+> ⚠️ **Important**: Replace `your_neon_database_url_here` with your actual Neon database connection string. Never commit real credentials to git!
 
 ### 3. Initialize Database
 

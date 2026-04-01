@@ -27,7 +27,33 @@ dist-ssr
 .env
 .env.local
 .env.production
+.env.development
+.env.test
+.env.*.local
+*.env
 
 # Database
 *.db
 *.sqlite
+*.sql.backup
+database.json
+
+# Security & Secrets
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+config/secrets.js
+config/secrets.json
+secrets/
+credentials/
+*.credentials
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
