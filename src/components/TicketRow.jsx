@@ -159,10 +159,13 @@ const TicketRow = React.forwardRef(({ ticket, onStatusChange, index }, ref) => {
             >
               <button
                 onClick={() => setShowPhotoModal(false)}
-                className="absolute -top-12 right-0 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                className="absolute -top-14 right-0 p-3 rounded-full bg-white/90 hover:bg-white transition-all duration-200 shadow-lg"
+                style={{
+                  border: '2px solid rgba(0, 0, 0, 0.1)',
+                }}
                 aria-label="Close photo"
               >
-                <X size={24} className="text-white" />
+                <X size={24} className="text-gray-900" strokeWidth={2.5} />
               </button>
               <img
                 src={ticket.photoUrl}
@@ -297,10 +300,13 @@ export const TicketCard = React.forwardRef(({ ticket, onStatusChange, index }, r
             >
               <button
                 onClick={() => setShowPhotoModal(false)}
-                className="absolute -top-12 right-0 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                className="absolute -top-14 right-0 p-3 rounded-full bg-white/90 hover:bg-white transition-all duration-200 shadow-lg"
+                style={{
+                  border: '2px solid rgba(0, 0, 0, 0.1)',
+                }}
                 aria-label="Close photo"
               >
-                <X size={24} className="text-white" />
+                <X size={24} className="text-gray-900" strokeWidth={2.5} />
               </button>
               <img
                 src={ticket.photoUrl}
