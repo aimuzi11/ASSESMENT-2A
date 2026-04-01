@@ -253,32 +253,34 @@ const Dashboard = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="rounded-xl p-5 mb-6"
+        className="rounded-xl p-4 sm:p-5 mb-6"
         style={{
           background: 'rgba(255, 255, 255, 0.8)',
           border: '1px solid rgba(0, 0, 0, 0.08)',
           backdropFilter: 'blur(20px)',
         }}
       >
-        <div className="flex flex-col lg:flex-row lg:items-center gap-4">
+        <div className="flex flex-col gap-4">
           {/* Property Filter */}
-          <div className="relative flex-shrink-0">
+          <div className="relative flex-shrink-0 w-full sm:w-auto">
             <button
               onClick={() => setPropertyDropdownOpen(!propertyDropdownOpen)}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm"
+              className="w-full sm:w-auto flex items-center justify-between gap-2 px-4 py-2 rounded-lg text-sm"
               style={{
                 background: propertyFilter ? 'rgba(30, 64, 175, 0.15)' : 'rgba(0, 0, 0, 0.04)',
                 border: `1px solid ${propertyFilter ? 'rgba(30, 64, 175, 0.3)' : 'rgba(0, 0, 0, 0.08)'}`,
                 color: propertyFilter ? '#1E40AF' : 'rgba(0, 0, 0, 0.6)',
               }}
             >
-              <Filter size={16} />
-              <span className="max-w-[180px] truncate">
-                {propertyFilter || 'All Properties'}
-              </span>
+              <div className="flex items-center gap-2 flex-1">
+                <Filter size={16} />
+                <span className="truncate">
+                  {propertyFilter || 'All Properties'}
+                </span>
+              </div>
               <ChevronDown
                 size={14}
-                className={`transition-transform ${propertyDropdownOpen ? 'rotate-180' : ''}`}
+                className={`transition-transform flex-shrink-0 ${propertyDropdownOpen ? 'rotate-180' : ''}`}
               />
             </button>
 
@@ -288,7 +290,7 @@ const Dashboard = ({
                   initial={{ opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
-                  className="absolute mt-2 w-64 py-2 rounded-xl"
+                  className="absolute left-0 right-0 sm:left-auto sm:right-auto mt-2 sm:w-64 py-2 rounded-xl"
                   style={{
                     background: 'rgba(255, 255, 255, 0.98)',
                     border: '1px solid rgba(0, 0, 0, 0.1)',
@@ -330,36 +332,40 @@ const Dashboard = ({
           </div>
 
           {/* Urgency Filters */}
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-dark-900/40 mr-1">Urgency:</span>
-            {URGENCY_LEVELS.map((level) => (
-              <FilterPill
-                key={level}
-                label={level}
-                isActive={urgencyFilters.includes(level)}
-                onClick={() => toggleUrgencyFilter(level)}
-                color={urgencyColors[level]}
-              />
-            ))}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+            <span className="text-xs sm:text-sm text-dark-900/40 font-medium">Urgency:</span>
+            <div className="flex flex-wrap gap-2">
+              {URGENCY_LEVELS.map((level) => (
+                <FilterPill
+                  key={level}
+                  label={level}
+                  isActive={urgencyFilters.includes(level)}
+                  onClick={() => toggleUrgencyFilter(level)}
+                  color={urgencyColors[level]}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Status Filters */}
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-dark-900/40 mr-1">Status:</span>
-            {STATUS_OPTIONS.map((status) => (
-              <FilterPill
-                key={status}
-                label={status}
-                isActive={statusFilters.includes(status)}
-                onClick={() => toggleStatusFilter(status)}
-                color={statusColors[status]}
-              />
-            ))}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+            <span className="text-xs sm:text-sm text-dark-900/40 font-medium">Status:</span>
+            <div className="flex flex-wrap gap-2">
+              {STATUS_OPTIONS.map((status) => (
+                <FilterPill
+                  key={status}
+                  label={status}
+                  isActive={statusFilters.includes(status)}
+                  onClick={() => toggleStatusFilter(status)}
+                  color={statusColors[status]}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Issue Count & Clear */}
-          <div className="flex items-center gap-4 lg:ml-auto">
-            <span className="text-sm text-dark-900/40">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 pt-2 border-t border-black/5 sm:border-0 sm:pt-0">
+            <span className="text-xs sm:text-sm text-dark-900/40">
               Showing {filteredTickets.length} of {tickets.length} issues
             </span>
             {hasActiveFilters && (
@@ -368,7 +374,7 @@ const Dashboard = ({
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 onClick={clearAllFilters}
-                className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm text-red-400 hover:bg-red-500/10 transition-colors"
+                className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs sm:text-sm text-red-400 hover:bg-red-500/10 transition-colors"
               >
                 <X size={14} />
                 Clear filters

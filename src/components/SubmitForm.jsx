@@ -123,7 +123,7 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
   };
 
   const inputBaseClasses = `
-    w-full px-4 py-3 rounded-xl
+    w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl
     glass-input
     text-dark-900 placeholder-dark-900/40
     font-dm text-sm
@@ -133,14 +133,14 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
   return (
     <>
       <motion.div
-        className="w-full max-w-[560px] mx-auto"
+        className="w-full max-w-[560px] mx-auto px-2 sm:px-0"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         {/* Form Card */}
         <div
-          className="rounded-2xl p-8 relative overflow-visible"
+          className="rounded-2xl p-5 sm:p-8 relative overflow-visible"
           style={{
             background: 'rgba(255, 255, 255, 0.8)',
             border: '1px solid rgba(0, 0, 0, 0.08)',
@@ -150,7 +150,7 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
         >
           {/* Subtle gradient glow */}
           <div
-            className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-30 pointer-events-none"
+            className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-30 pointer-events-none hidden sm:block"
             style={{
               background: 'radial-gradient(circle, rgba(99,102,241,0.4) 0%, transparent 70%)',
             }}
@@ -158,11 +158,11 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
 
           <div className="relative">
             {/* Header */}
-            <div className="mb-8">
-              <h2 className="font-sora text-2xl font-semibold text-dark-900 mb-2">
+            <div className="mb-6 sm:mb-8">
+              <h2 className="font-sora text-xl sm:text-2xl font-semibold text-dark-900 mb-2">
                 Submit an Issue
               </h2>
-              <p className="text-dark-900/50 text-sm">
+              <p className="text-dark-900/50 text-xs sm:text-sm">
                 Report a maintenance issue for your property
               </p>
             </div>
@@ -178,10 +178,10 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
               </motion.div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {/* Property Dropdown */}
-              <div className="space-y-2">
-                <label htmlFor="property" className="block text-sm font-medium text-dark-900/70">
+              <div className="space-y-1.5 sm:space-y-2">
+                <label htmlFor="property" className="block text-xs sm:text-sm font-medium text-dark-900/70">
                   Property
                 </label>
                 <select
@@ -209,8 +209,8 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
               </div>
 
               {/* Category Dropdown with Icons */}
-              <div className="space-y-2" ref={categoryRef}>
-                <label className="block text-sm font-medium text-dark-900/70">
+              <div className="space-y-1.5 sm:space-y-2" ref={categoryRef}>
+                <label className="block text-xs sm:text-sm font-medium text-dark-900/70">
                   Issue Category
                 </label>
                 <div className="relative">
@@ -304,8 +304,8 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
               />
 
               {/* Description */}
-              <div className="space-y-2">
-                <label htmlFor="description" className="block text-sm font-medium text-dark-900/70">
+              <div className="space-y-1.5 sm:space-y-2">
+                <label htmlFor="description" className="block text-xs sm:text-sm font-medium text-dark-900/70">
                   Description
                 </label>
                 <div className="relative">
@@ -342,8 +342,8 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
               </div>
 
               {/* Photo Upload */}
-              <div className="space-y-2">
-                <label className="block text-sm font-medium text-dark-900/70">
+              <div className="space-y-1.5 sm:space-y-2">
+                <label className="block text-xs sm:text-sm font-medium text-dark-900/70">
                   Photo (Optional)
                 </label>
 
@@ -403,8 +403,8 @@ const SubmitForm = ({ onSubmit, onSuccess, properties = [] }) => {
                 type="submit"
                 disabled={isSubmitting}
                 className={`
-                  w-full py-4 px-6 rounded-xl
-                  font-sora font-semibold text-dark-900
+                  w-full py-3 sm:py-4 px-4 sm:px-6 rounded-xl
+                  font-sora font-semibold text-sm sm:text-base text-white
                   flex items-center justify-center gap-2
                   transition-all duration-300
                   focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2 focus:ring-offset-dark-900
